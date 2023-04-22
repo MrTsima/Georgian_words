@@ -1,0 +1,3 @@
+/home/mrtsima/CLionProjects/Georgian_words/cmake-build-debug/CMakeFiles/Georgian_words.dir
+/home/mrtsima/CLionProjects/Georgian_words/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/mrtsima/CLionProjects/Georgian_words/cmake-build-debug/CMakeFiles/rebuild_cache.dir

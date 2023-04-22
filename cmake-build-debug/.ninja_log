@@ -1,0 +1,16 @@
+# ninja log v5
+1	1167	1682163363831361048	CMakeFiles/Georgian_words.dir/sources.cpp.o	993fabe0018dcabe
+1	5749	1682164164624721805	CMakeFiles/Georgian_words.dir/site_parser.cpp.o	e56d77a03910c4e3
+0	1269	1682164578434735946	CMakeFiles/Georgian_words.dir/main.cpp.o	88e5a8497cb211a
+1	1091	1682153035857674460	CMakeFiles/Georgian_words.dir/PDFSrapper.cpp.o	d7fcc9159c91b8d6
+0	13	1682165100148087138	build.ninja	42a48295be58a2de
+1	1206	1682163363868027716	CMakeFiles/Georgian_words.dir/txtSrapper.cpp.o	2b39afedb1958ec
+1269	1362	1682164578524735948	Georgian_words	71b3206281829804
+0	21	1682165100148087138	build.ninja	42a48295be58a2de
+1	1119	1682165112058087546	CMakeFiles/Georgian_words.dir/sources.cpp.o	993fabe0018dcabe
+1	1245	1682165140758088530	CMakeFiles/Georgian_words.dir/main.cpp.o	88e5a8497cb211a
+1245	1378	1682165140891421868	Georgian_words	71b3206281829804
+0	1473	1682166640804806529	CMakeFiles/Georgian_words.dir/main.cpp.o	88e5a8497cb211a
+1473	1573	1682166640904806532	Georgian_words	71b3206281829804
+1	1239	1682166652891473612	CMakeFiles/Georgian_words.dir/main.cpp.o	88e5a8497cb211a
+1239	1345	1682166652994806948	Georgian_words	71b3206281829804
