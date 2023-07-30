@@ -25,7 +25,7 @@ vector<vector<wstring>> txtSrapper::scrap(const string& filename) {
                 wstring word = L"";
                 vector<wstring> words;
                 for (wchar_t c: line) {
-                    if (iswspace(c) || iswpunct(c)) {
+                    if (iswspace(c) || iswpunct(c)||(c<L'ა'||c>L'ჰ')) {
                         if (!word.empty()) {
                             // Only consider Georgian words consisting entirely of Georgian letters
                             if (all_of(word.begin(), word.end(), [](wchar_t c) { return (c >= L'ა' && c <= L'ჰ'); })) {

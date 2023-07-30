@@ -5,6 +5,8 @@
 #include <locale>
 #include <poppler/cpp/poppler-document.h>
 #include <poppler/cpp/poppler-page.h>
+#include <QApplication>
+#include <QPushButton>
 #include "sources.h"
 #include "txtSrapper.h"
 using namespace std;
@@ -21,6 +23,7 @@ void find_matchings(vector<wstring>& all_words,wstring& word,bool only_vowels);
 void preprocessing(vector<wstring>& vector1, unordered_map<wstring, bool>& unorderedMap);
 
 int main() {
+
     std::locale::global(std::locale("ka_GE.UTF-8")); // set the locale to support UTF-8 encoding
     // Seed the random number generator with the current time
     srand(time(nullptr));
@@ -217,6 +220,8 @@ void find_matchings(vector<wstring>& all_words,wstring& word, bool only_vowels){
     fout.is_open();
     for (const auto &word: ans) {
         fout << std::wstring_convert<std::codecvt_utf8<wchar_t>>().to_bytes(word) << std::endl;
+        cout << std::wstring_convert<std::codecvt_utf8<wchar_t>>().to_bytes(word) << std::endl;
+
     }
     fout.close();
 }
@@ -231,6 +236,7 @@ void initialize_txts() {
     sources::add_pdf("/home/mrtsima/CLionProjects/Georgian_words/sources_for_words/jayo.txt");
     sources::add_pdf("/home/mrtsima/CLionProjects/Georgian_words/sources_for_words/qartuli_wigni.txt");
     sources::add_pdf("/home/mrtsima/CLionProjects/Georgian_words/sources_for_words/akakis_leqsebi.txt");
+    sources::add_pdf("/home/mrtsima/CLionProjects/Georgian_words/sources_for_words/ra.txt");
 }
 
 
