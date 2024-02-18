@@ -42,6 +42,38 @@ bool sources::is_consonants(wchar_t c){
 }
 
 // Function to add a text file to the list
-void sources::add_pdf(const string& s){
+void sources::add_resource(const string& s){
     list_of_txts_to_read.push_back(s);
+}
+
+void sources::initialize_source_file_names() {
+    // TODO: before run project
+    /* change the paths with your own path in sources.txt*/
+    std::string filePath = "/home/tsima/CLionProjects/Georgian_words/sources.txt";
+    std::ifstream file(filePath);
+    std::vector<std::string> addresses;
+
+    if (file) {
+        std::string line;
+        // Assuming all addresses are on a single line
+        if (std::getline(file, line)) {
+            std::stringstream ss(line);
+            std::string address;
+            while (std::getline(ss, address, ',')) {
+                // Trim whitespace if necessary
+                address.erase(address.find_last_not_of(" \n\r\t")+1);
+                if (!address.empty()) {
+                    addresses.push_back(address);
+                }
+            }
+        }
+        file.close();
+    } else {
+        std::cerr << "Unable to open file: " << filePath << std::endl;
+    }
+
+    for (const auto& addr : addresses) {
+    //  std::cout << addr << std::endl;
+        sources::add_resource(addr);
+    }
 }

@@ -16,9 +16,11 @@ class sources {
     static bool is_consonants(wchar_t c);
 
 public:
-    static void add_pdf(const string& s);
+    static void add_resource(const string& s);
 
     static bool is_vowel(wchar_t c);
+
+    static void initialize_source_file_names();
 };
 
 
