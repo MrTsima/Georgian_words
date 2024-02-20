@@ -6,19 +6,18 @@
 #define GEORGIAN_WORDS_txtSRAPPER_H
 
 #include <bits/stdc++.h>
-using namespace std;
 
 class txtSrapper {
 
 
 public:
-    static vector<vector<wstring> >  scrap(const string& filename);
+    static std::vector<std::vector<std::wstring> >  scrap(const std::string& filename);
 
-    static vector<vector<wstring>> scrapPdf(const string &filename);
+    static std::vector<std::vector<std::wstring>> scrapPdf(const std::string &filename);
 
-    static vector<vector<wstring>> scrapTxt(const string &filename);
+    static std::vector<std::vector<std::wstring>> scrapTxt(const std::string &filename);
 
-    static vector<wstring> processLine(const wstring &line);
+    static std::vector<std::wstring> processLine(const std::wstring &line);
 };
 
 

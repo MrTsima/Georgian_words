@@ -10,10 +10,9 @@
 #include <poppler/cpp/poppler-document.h>
 #include <poppler/cpp/poppler-page.h>
 
-using namespace std;
 
 
-vector<vector<wstring>> txtSrapper::scrap(const string& filename) {
+std::vector<std::vector<std::wstring>> txtSrapper::scrap(const std::string& filename) {
     // Set the locale to support UTF-8 encoding
     setlocale(LC_ALL, "ka_GE.UTF-8");
 
@@ -25,11 +24,11 @@ vector<vector<wstring>> txtSrapper::scrap(const string& filename) {
     }
 }
 
-vector<vector<wstring>> txtSrapper::scrapPdf(const string& filename) {
-    vector<vector<wstring>> pages;
+std::vector<std::vector<std::wstring>> txtSrapper::scrapPdf(const std::string& filename) {
+    std::vector<std::vector<std::wstring>> pages;
     auto doc = poppler::document::load_from_file(filename);
     if (!doc) {
-        cerr << "Failed to open PDF file." << endl;
+        std::cerr << "Failed to open PDF file." << std::endl;
         return pages; // Return empty if failed to open
     }
 
@@ -40,9 +39,9 @@ vector<vector<wstring>> txtSrapper::scrapPdf(const string& filename) {
         std::wstring_convert<std::codecvt_utf8<wchar_t>> conv;
         std::wstring wtext = conv.from_bytes(text);
 
-        // Process text (now in wstring format) to extract Georgian words
-        vector<wstring> words;
-        wstring word = L"";
+        // Process text (now in std::wstring format) to extract Georgian words
+        std::vector<std::wstring> words;
+        std::wstring word = L"";
         for (wchar_t c: wtext) {
             if (iswspace(c) || iswpunct(c)||(c < L'ა' || c > L'ჰ')) {
                 if (!word.empty()) {
@@ -68,15 +67,15 @@ vector<vector<wstring>> txtSrapper::scrapPdf(const string& filename) {
     return pages;
 }
 
-vector<vector<wstring>> txtSrapper::scrapTxt(const string& filename) {
-    vector<vector<wstring>> pages;
-    wifstream file(filename);
+std::vector<std::vector<std::wstring>> txtSrapper::scrapTxt(const std::string& filename) {
+    std::vector<std::vector<std::wstring>> pages;
+    std::wifstream file(filename);
 
     if (file.is_open()) {
         while (true) {
-            wstring line;
+            std::wstring line;
             if (getline(file, line)) {
-                vector<wstring> words = processLine(line);
+                std::vector<std::wstring> words = processLine(line);
                 if (!words.empty()) {
                     pages.push_back(words);
                 }
@@ -88,10 +87,10 @@ vector<vector<wstring>> txtSrapper::scrapTxt(const string& filename) {
     return pages;
 }
 
-vector<wstring> txtSrapper::processLine(const wstring& line) {
+std::vector<std::wstring> txtSrapper::processLine(const std::wstring& line) {
     // Extract Georgian words from the text
-    vector<wstring> words;
-    wstring word = L"";
+    std::vector<std::wstring> words;
+    std::wstring word = L"";
     for (wchar_t c: line) {
         if (iswspace(c) || iswpunct(c) || (c < L'ა' || c > L'ჰ')) {
             if (!word.empty()) {

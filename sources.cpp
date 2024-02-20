@@ -16,7 +16,7 @@ const wchar_t consonants[] = {
 const wchar_t vowels[] = {L'ა', L'ე', L'ი', L'ო', L'უ'};
 
 // List of text files to read
-vector<string> list_of_txts_to_read;
+std::vector<std::string> list_of_txts_to_read;
 
 // Maximum number of matching words to display
 const int MAX_MATCHING_WORDS_NEEDED = 10;
@@ -42,7 +42,7 @@ bool sources::is_consonants(wchar_t c){
 }
 
 // Function to add a text file to the list
-void sources::add_resource(const string& s){
+void sources::add_resource(const std::string& s){
     list_of_txts_to_read.push_back(s);
 }
 
